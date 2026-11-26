@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MentoNexa connects skilled refugees with professional mentors, networks and career opportunities.">
+    <title>MentoNexa | Your Skills. Your Network. Your Future.</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="nav-wrap">
+        <a href="#home" class="logo">Mento<span>Nexa</span></a>
+
+        <button class="menu-toggle" id="menuToggle" type="button"
+                aria-label="Open navigation" aria-expanded="false">☰</button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#mentors">Mentors</a>
+            <a href="#request">Request Mentorship</a>
+            <a href="#opportunities">Opportunities</a>
+            <a href="#admin-login">Admin</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">LOCAL EXPERIENCE · PROFESSIONAL NETWORKS</p>
+
+            <h1>Your Skills Deserve an Opportunity</h1>
+
+            <p>
+                MentoNexa helps skilled refugees connect with mentors,
+                build professional networks, and explore pathways into meaningful work.
+            </p>
+
+            <a href="#mentors" class="btn btn-accent">Find a Mentor</a>
+
+            <p class="tagline">Your Skills. Your Network. Your Future.</p>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="hero-mark">MN</div>
+            <span class="float-card card-one">Skills</span>
+            <span class="float-card card-two">Connections</span>
+            <span class="float-card card-three">Opportunity</span>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+        <div class="section-heading">
+            <p class="eyebrow">ABOUT MENTONEXA</p>
+            <h2>Turning Skills Into Connections</h2>
+
+            <p>
+                Talent exists everywhere. Access to professional networks
+                and opportunities does not. MentoNexa is designed to help bridge that gap.
+            </p>
+        </div>
+
+        <div class="info-grid">
+
+            <article class="info-card">
+                <div class="info-icon">◎</div>
+                <h3>Our Mission</h3>
+                <p>
+                    Connect skilled refugees with guidance, professional
+                    relationships, and practical career pathways.
+                </p>
+            </article>
+
+            <article class="info-card">
+                <div class="info-icon">◇</div>
+                <h3>Our Vision</h3>
+                <p>
+                    Professional communities where people can contribute
+                    their skills and pursue opportunities with dignity.
+                </p>
+            </article>
+
+            <article class="info-card">
+                <div class="info-icon">↗</div>
+                <h3>Our Impact</h3>
+                <p>
+                    Make it easier to find mentors, strengthen confidence,
+                    and discover routes into work and learning.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- MENTORS SECTION -->
+    <section class="section mentors-section" id="mentors">
+        <div class="section-heading">
+            <p class="eyebrow">MEET THE MENTORS</p>
+            <h2>Learn From Professional Experience</h2>
+
+            <p>
+                Explore these sample mentor profiles and choose someone
+                whose experience matches your goals.
+            </p>
+        </div>
+
+        <div class="mentor-grid">
+
+            <article class="mentor-card">
+                <div class="avatar avatar-blue">SA</div>
+                <h3>Sarah Ahmed</h3>
+                <p class="mentor-field">Software Engineering</p>
+                <span class="pill">Technology</span>
+
+                <p class="mentor-bio">
+                    Supports learners who want to develop practical
+                    software skills and understand technology careers.
+                </p>
+
+                <button class="btn btn-primary mentor-btn"
+                        type="button" data-mentor="Sarah Ahmed">
+                    Request Mentorship
+                </button>
+            </article>
+
+            <article class="mentor-card">
+                <div class="avatar avatar-teal">DM</div>
+                <h3>David Mwangi</h3>
+                <p class="mentor-field">Business Management</p>
+                <span class="pill">Business</span>
+
+                <p class="mentor-bio">
+                    Shares guidance on business planning, workplace
+                    skills, and professional development.
+                </p>
+
+                <button class="btn btn-primary mentor-btn"
+                        type="button" data-mentor="David Mwangi">
+                    Request Mentorship
+                </button>
+            </article>
+
+            <article class="mentor-card">
+                <div class="avatar avatar-gold">FH</div>
+                <h3>Fatima Hassan</h3>
+                <p class="mentor-field">Education</p>
+                <span class="pill">Education</span>
+
+                <p class="mentor-bio">
+                    Offers guidance on teaching, training, learning
+                    pathways, and education careers.
+                </p>
+
+                <button class="btn btn-primary mentor-btn"
+                        type="button" data-mentor="Fatima Hassan">
+                    Request Mentorship
+                </button>
+            </article>
+
+        </div>
+
+        <p class="demo-note">
+            Demonstration note: These sample profiles do not represent confirmed mentor availability.
+        </p>
+    </section>
+
+    <!-- MENTORSHIP REQUEST FORM -->
+    <section class="section request-section" id="request">
+        <div class="form-card">
+
+            <div class="section-heading left-heading">
+                <p class="eyebrow">TAKE THE NEXT STEP</p>
+                <h2>Request a Mentorship Session</h2>
+                <p>Complete the form below to submit a demonstration request.</p>
+            </div>
+
+            <div class="selected-mentor" id="selectedMentorText" aria-live="polite">
+                No mentor selected yet. Choose a mentor above to get started.
+            </div>
+
+            <form id="mentorForm">
+
+                <input type="hidden" id="selectedMentor" name="mentor">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name"
+                               placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="name@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profession">Professional Field *</label>
+                        <select id="profession" name="profession" required>
+                            <option value="">Choose your field</option>
+                            <option>Technology</option>
+                            <option>Healthcare</option>
+                            <option>Education</option>
+                            <option>Business</option>
+                            <option>Engineering</option>
+                            <option>Humanitarian / Community Work</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredDate">Preferred Date</label>
+                        <input type="date" id="preferredDate" name="preferredDate">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="experience">Skills and Experience *</label>
+                        <textarea id="experience" name="experience"
+                                  rows="3"
+                                  placeholder="Briefly describe your skills and experience"
+                                  required></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message">What Would You Like Help With?</label>
+                        <textarea id="message" name="message"
+                                  rows="3"
+                                  placeholder="Tell the mentor what you hope to achieve"></textarea>
+                    </div>
+
+                </div>
+
+                <button class="btn btn-primary submit-btn" type="submit">
+                    Submit Mentorship Request
+                </button>
+
+                <p class="form-message" id="formMessage"
+                   role="status" aria-live="polite"></p>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- OPPORTUNITIES SECTION -->
+    <section class="section opportunities-section" id="opportunities">
+        <div class="section-heading">
+            <p class="eyebrow">BUILD YOUR NEXT STEP</p>
+            <h2>Explore Pathways Forward</h2>
+
+            <p>
+                Examples of the kinds of support and opportunities
+                MentoNexa aims to make easier to discover.
+            </p>
+        </div>
+
+        <div class="opportunity-grid">
+
+            <article class="opportunity-card">
+                <div class="opportunity-icon">▣</div>
+                <h3>Work Experience</h3>
+                <p>
+                    Explore internships, volunteering, and practical
+                    opportunities to demonstrate your abilities.
+                </p>
+            </article>
+
+            <article class="opportunity-card">
+                <div class="opportunity-icon">◎</div>
+                <h3>Professional Networks</h3>
+                <p>
+                    Build connections with people and communities
+                    working in your professional field.
+                </p>
+            </article>
+
+            <article class="opportunity-card">
+                <div class="opportunity-icon">↗</div>
+                <h3>Career Development</h3>
+                <p>
+                    Strengthen your CV, interview preparation,
+                    workplace confidence, and career direction.
+                </p>
+            </article>
+
+        </div>
+
+        <p class="demo-note">
+            The opportunities above are illustrative categories, not verified vacancies.
+        </p>
+    </section>
+
+    <!-- ADMIN LOGIN -->
+    <section class="admin-section" id="admin-login">
+
+        <div class="login-card" id="adminLoginSection">
+
+            <p class="eyebrow">RESTRICTED DEMO AREA</p>
+            <h2>Administrator Login</h2>
+            <p class="muted">
+                Sign in to review demonstration mentorship requests.
+            </p>
+
+            <form id="adminLoginForm">
+
+                <label for="adminPassword">Demo Password</label>
+
+                <input type="password" id="adminPassword"
+                       placeholder="Enter demo password" required>
+
+                <button class="btn btn-primary" type="submit">
+                    Login
+                </button>
+
+                <p class="login-message" id="loginMessage"
+                   role="status" aria-live="polite"></p>
+
+            </form>
+
+            <p class="demo-note small-note">
+                Demo password: <strong>Admin@123</strong>.
+                This client-side login is not secure for real administration.
+            </p>
+
+        </div>
+
+        <!-- ADMIN DASHBOARD -->
+        <div class="dashboard" id="adminDashboard" hidden>
+
+            <div class="dashboard-heading">
+                <div>
+                    <p class="eyebrow">MENTONEXA MANAGEMENT</p>
+                    <h2>Admin Dashboard</h2>
+                    <p class="muted">
+                        Manage mentorship requests saved in this browser.
+                    </p>
+                </div>
+
+                <button class="btn btn-outline"
+                        id="logoutButton" type="button">
+                    Log Out
+                </button>
+            </div>
+
+            <div class="dashboard-actions">
+                <button class="btn btn-primary"
+                        id="refreshRequests" type="button">
+                    Refresh Requests
+                </button>
+
+                <button class="btn btn-danger"
+                        id="clearAllRequests" type="button">
+                    Clear All Requests
+                </button>
+            </div>
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+                    <span>Total Requests</span>
+                    <strong id="totalRequests">0</strong>
+                </article>
+
+                <article class="stat-card">
+                    <span>Pending</span>
+                    <strong id="pendingRequests">0</strong>
+                </article>
+
+                <article class="stat-card">
+                    <span>Approved</span>
+                    <strong id="approvedRequests">0</strong>
+                </article>
+
+                <article class="stat-card">
+                    <span>Rejected</span>
+                    <strong id="rejectedRequests">0</strong>
+                </article>
+
+            </div>
+
+            <div class="table-wrap">
+                <table class="requests-table">
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Field</th>
+                            <th>Skills / Experience</th>
+                            <th>Mentor</th>
+                            <th>Preferred Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="requestsTableBody"></tbody>
+
+                </table>
+            </div>
+
+            <p class="empty-message" id="emptyRequestsMessage">
+                No mentorship requests have been submitted yet.
+            </p>
+
+            <p class="demo-note">
+                Requests are stored in this browser only.
+                They are not shared between different visitors or devices.
+            </p>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <a href="#home" class="footer-logo">MentoNexa</a>
+
+    <p>Your Skills. Your Network. Your Future.</p>
+
+    <p class="footer-small">
+        A demonstration concept for connecting skilled refugees
+        with professional networks.
+    </p>
+
+    <p class="copyright">
+        © 2026 MentoNexa. Demonstration Project.
+    </p>
+
+</footer>
+
+</body>
+</html>
